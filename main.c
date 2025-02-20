@@ -8,7 +8,7 @@
 #define NUM_CHILDREN 5
 
 int main() {
-    ensure_trailing_newline("events_log.txt");  // Ensure file ends with newline
+    ensure_trailing_newline("events_log.txt");  
 
     int pipes[NUM_CHILDREN][2][2]; // [child][0]: parent-to-child, [child][1]: child-to-parent
     pid_t pids[NUM_CHILDREN];
@@ -37,7 +37,7 @@ int main() {
                     close(pipes[j][1][1]);
                 }
             }
-            // For our own pipe, close unused ends.
+            
             close(pipes[i][0][1]); // Child reads from parent's pipe.
             close(pipes[i][1][0]); // Child writes to parent's pipe.
             switch (i) {
