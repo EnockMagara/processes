@@ -131,7 +131,7 @@ int main() {
         wait(NULL);
     }
 
-    // Final output (must match the sample exactly)
+  
     printf("PROCESS_CREATE events: %d\n", process_create_count);
     printf("MEMORY_ALLOC events: Total memory allocated: %lld bytes\n", total_memory);
     printf("FILE_OPEN events: Most accessed file: \"%s\" (%d times)\n", most_accessed_file, max_count);
